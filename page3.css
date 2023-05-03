@@ -1,0 +1,234 @@
+/*---------网页布局--------------------------------------*/
+.grid-container {
+    display: grid;                                  /*网格模式*/
+    grid-template-columns: 120px auto auto auto 19%;  /*网格列宽设置*/
+    grid-template-rows: 70px 50px 1000px 100px;       /*网格行宽设置*/
+    grid-gap: 0;                                    /*网格间隙*/
+    grid-template-areas:                            /*网格各区域命名*/
+      'logo welcome welcome welcome language'
+      "navmenu navmenu navmenu navmenu search"
+      "leftaside article article article rightaside"
+      "footer footer footer footer footer"; 
+    background-color: white;                       /*网页背景颜色*/
+    padding:1px;
+    overflow:auto;
+}
+.grid-container > div {    /* ">"为子选择器，定义grid-container下的所有第一代div属性*/                      
+    text-align:center;
+    font-size:30px;
+}
+.logo{                                              /*logo区域属性*/
+    grid-area:logo;                                 /*logo所在区域*/
+    background-color: white; 
+    text-align:right;
+    font-family:"Brush Script MT","Lucida Handwriting";/*字体*/  
+    border-style: none;                             /*边框样式：默认，无边框*/
+}
+.welcome { 
+    grid-area: welcome;                             /*welcome区域属性*/
+    background-color: white; 
+    font-family:"Brush Script MT","Lucida Handwriting"; /*字体*/
+    font-size: 50px;                                /*字体大小*/
+    color:rgb(226, 19, 126);                      /*字体颜色*/
+    border-style: none;                             /*边框样式：默认，无边框*/
+}
+.language{                                          /*languageo区域属性*/
+    grid-area:language;
+    background-color: white; 
+}
+.navmenu {                                          /*网页导航栏区域属性*/
+    grid-area: navmenu; 
+    background-color:rgb(74, 178, 213); 
+}
+.search{                                            /*网页搜索区域属性*/
+    grid-area:search;
+    background-color:rgb(74, 178, 213);
+    overflow: hidden;
+}
+.leftaside {                                        /*网页左侧边栏区域属性*/
+    grid-area: leftaside; 
+    background-color:rgb(248, 243, 236); 
+    /*border:2px solid;*/
+    margin:3px;
+}
+.article {                                          /*网页内容主体页就是文章区域属性*/
+    grid-area: article; 
+    background-color:rgb(248, 243, 236);
+    overflow:auto;
+    margin:3px;
+}
+.rightaside {                                       /*网页右侧边栏区域属性*/ 
+    grid-area: rightaside; 
+    background-color:rgb(248, 243, 236);          /*rgb(195, 233, 245)*/
+    text-align:left;
+    padding:10px;
+    overflow:auto;; 
+    margin:3px;
+}
+.footer {                                           /*footer区域属性*/
+    grid-area: footer;
+    background-color:rgb(231, 228, 228);          /*rgb(241, 239, 239); */
+    overflow:auto;
+}
+/*-------logo属性相关设置----------------------------------------*/
+.logo_container{
+    position: relative;                             /*搜索框里的元素是相对定位*/
+    margin-top:0px;
+    margin-left:0px;
+    height:118px;
+    width:90px;
+ 
+}
+.logo_img{                                          /*logo图片设置*/
+    position:absolute;                              /*绝对定位*/
+    top:11px;                                         /*绝对定位的位置设置*/
+
+    /*float:top;                                      float:none|left|right|initial|inherit;定义元素在哪个方向浮动。*/
+    margin-left:5px;                                     /*图像外部空隙*/
+    width:80px;                                     /*图像宽度*/
+    height:80px;                                    /*图像高度*/
+
+    /*以下将搜索栏绝对定位到搜索框左边*/
+    position: absolute;     
+    left:0;
+}
+.logo_text{                                         /*logo文字设置*/
+    position: absolute;
+    left:10px;
+    bottom:0;
+
+    font-size: 20px;                                /*字体大小*/
+    color:white;                                  /*字体颜色*/                        
+}
+/*
+.logo_text2{                                        
+    position: absolute;
+    left:10px;
+    bottom:0;
+    font-size: 18px;                                
+    color:rgb(23, 8, 125);                                    
+}
+*/
+/*-------语言选择框设置----------------------------------------*/
+.select{
+    position: absolute;
+    right:0;
+    top:0;
+    
+    margin-top:5px;
+    margin-right:5px;
+    background-color: lightgray;
+    width:100px;
+    height:30px;
+    font-size:15px;
+}
+/*---------网页导航栏相关设置-------------------*/
+.nav_img{                                           /*导航栏图片属性*/
+    height:21px;
+    width:21px;
+    filter:invert(100%);                            /*将图片颜色反转*/
+}
+.nav_ul{         
+    list-style-type:none;                           /*设置列表项标记的类型:无标记*/
+    margin:0px;                                     /*将导航栏紧挨着网页头，因为网页头宽度为60px ,60px 0px 0px 0px*/
+    padding:0 0 0 80px;                             /*文字距边框距离：上，右，下，左*/
+    overflow: hidden;                               /*TEXT-ALIGN用来定义层中的内容排列方式，center居中,left居左,right居右。*/
+}
+.nav_li{
+    display:inline;
+}
+.nav_li a{              /* " "为后代选择器，定义nav_li下的所有a的属性*/   
+    /*margin:1500px 10px 0px 10px;MARGIN是指层的边框以外留的空白,上右下左"*/
+    display: inline-block;
+    color:rgb(4, 24, 91);
+    /*text-align: center;*/  
+    text-decoration:none;                           /*去掉链接的下划线*/
+    font-size: 21px;
+    padding:8px 16px;   /*PADDING是指层的边框到层的内容之间的空白,上，右，下，左空隙*/  
+}
+.nav_li a:hover{
+    background-color:rgb(4, 24, 91);
+    color:white;
+}
+/*----------搜索框：由两部分组成，左边是搜索栏，右边是搜索按钮-------------*/
+.search_container{                                  /*搜索框*/
+    position: relative;                             /*搜索框里的元素是相对定位*/
+    margin-top:8px;
+    margin-left:10px;
+    height:35px;
+    width:253px;
+
+}
+.search_frame{                                      /*搜索栏*/
+    width:86%;/*220px;*/
+    height:35px;
+    font-size:20px;
+   /* background-color:rgb(211, 244, 244);
+    border-radius: 10px;*/
+    outline: none;
+    /*以下将搜索栏绝对定位到搜索框左边*/
+    position: absolute;     
+    left:0;
+}
+.search_button{                                      /*搜索按钮*/
+    height:35px;
+    width:14%;/*35px;*/
+    /*border: none;*/
+    outline: none;
+    cursor: pointer; /*要显示的光标的类型（形状）*/
+    /*以下为搜索按钮背景图片设置*/
+    background: url("/Users/jan/Documents/HtmlLearning/picture/magnifying-glass.png ");
+    background-size:35px 35px;
+    background-repeat:no-repeat;
+    background-color:rgb(155, 152, 152);
+    /*以下将搜索按钮绝对定位到搜索框右边*/
+    position: absolute;
+    right:0;
+}
+/*---------网页左侧边栏相关设置-------------------*/
+.leftaside_ul {                                         /*无序列表标签*/
+    list-style-type: none;                              /*设置列表项标记的类型:无标记*/
+    margin: 0;
+    padding: 0;
+    width:100%;  
+}
+.btn{                                                   /*左侧栏按钮设置*/
+    display:block;
+    color:#000;
+    text-decoration:none;
+    background-color: transparent;
+    font-size: 21px; 
+    padding:8px 18px;
+    border:none;
+}
+.btn.active{
+    background-color:#555;
+    color:white;
+}
+/*------点击左侧栏按钮可切换article内容-----------------------------------*/
+.content{
+    margin-top:20px;
+    display:none;
+}
+.content.show{
+    display:block;
+}
+/*-------右侧栏-用户名密码登录等相关属性---------------------------------------*/
+.logincontainer{
+    width:200px;
+    height:100px;
+    position:relative;
+}
+.inputframe{
+    color:gray;
+    width:152px;
+    height:35px;
+    font-size:15px;
+}
+.login_button{
+    height:35px;
+    width:80px;
+    font-size:15px;
+    font-weight:bold;       /*字体加粗，Font-style：italic是斜体字*/
+}
+
