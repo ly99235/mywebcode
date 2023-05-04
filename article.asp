@@ -1,0 +1,1 @@
+texttexttexttexttexttext texttexttexttexttexttexttexttextte CSS 组合器 组合器是解释选择器之间关系的某种机制。 CSS 选择器可以包含多个简单选择器。在简单选择器之间，我们可以包含一个组合器。 CSS 中有四种不同的组合器： 后代选择器 (空格) 子选择器 (>) 相邻兄弟选择器 (+) 通用兄弟选择器 (~)
