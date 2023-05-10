@@ -50,3 +50,27 @@ function register(){
 }*/
 /*注册后台处理*/
 
+function register() {
+    document.getElementById('regBtn').onclick = function() {
+    var input_username = document.getElementById("username").value;
+    var input_password = document.getElementById("password").value;
+    //ajax提交用户名和密码到后台程序
+    var xhr = new XMLHttpRequest();        //创建 XMLHttpRequest
+    xhr.open("POST","registerRecv.php",ture);   //初始化,post to registerRecv.php
+    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xhr.send("name=" + input_username + "&password=" + md5(input_password));
+    xhr.onreadystatechange = function() {
+        if(xhr.readyState == 4 && xhr.status == 200) {
+            var res = xhr.responseText;
+            if(res == "register success") {
+                alert("registed successfull!");
+                window.location.href = "index.html";
+            }
+            else {
+                alert(res);
+            }
+        }
+    }
+}      
+}     
+

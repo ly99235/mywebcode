@@ -1,0 +1,48 @@
+body{
+    background-color:rgb(248, 243, 236);
+}
+.registerFrame{
+    height:500px;
+    width:500px;
+    margin:auto;
+    margin-top:100px;
+    border:2px solid;
+    text-align:center;
+    background-color:lightblue;
+}
+.frame{
+    position:relative;
+    height:44px;
+    width:450px;
+    border:2px solid;
+    text-align:center;
+    margin:40px 30px;
+    border-radius: 15px;
+}
+
+.lableframe{
+    position:absolute;
+    left:0;
+
+    height:40px;
+    width:150px;
+  
+    background-color:rgb(57, 156, 231);
+    color:white;
+    border-radius: 15px;
+    text-align:center;
+}
+.inputframe{
+    position:absolute;
+    right:0;
+
+    height:40px;
+    width:298px;
+    border-style:none;
+    
+    outline:none;       /*input时，不显示边框*/
+    text-align:left;
+    padding-left:10px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}

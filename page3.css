@@ -226,9 +226,11 @@
     font-size:15px;
 }
 .login_button{
+    text-decoration:none;
     height:35px;
     width:80px;
+    color:black;
     font-size:15px;
     font-weight:bold;       /*字体加粗，Font-style：italic是斜体字*/
 }
-
+/*---------------------------------*/

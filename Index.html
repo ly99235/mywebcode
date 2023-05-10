@@ -13,10 +13,12 @@
         <!--<base target="_blank">                          点击所有网页链接均在新窗口打开-->
 
         <title>Jan's website</title>                    <!-- 网络名字 -->
+        
+   
     </head>
 
     <!-- 网页主体 -->
-    <body>          
+    <body>                  
         <div class="grid-container">                    <!-- 网络布局采用网格模式 -->
             <!-- logo图标 -->
 <!-- 
@@ -34,14 +36,12 @@
             </div> 
             </div>                                
             <!-- 欢迎栏 -->
-            <div class="welcome"><marquee>Welcome to my website! This is page 3</marquee></div>   
+            <div class="welcome"><marquee>Welcome to my website! This is home page</marquee></div>   
             <!--语言选择-->
             <div class="language">                      
                 <select class="select">                 <!--下拉菜单-->
-                    <option value="Chinese">select a laguage</option>
-                    <option value="Chinese">Chinese</option>
-                    <option value="English">English</option>   
-                    <option value="Japanese">Japanese</option>   
+                    <option value="简体中文">简体中文</option>
+                    <option value="English">English</option>    
                 </select>   
             </div>  
             <!-- 网页水平导航栏 -->                            
@@ -66,68 +66,79 @@
                     </form>   
                 </div> 
             </div> 
-            <!-- 网页左导航栏 -->
+            <!-- 网页左导航栏<li class="leftaside_li"></li> -->
             <div class="leftaside">                     
                 <ul class="leftaside_ul">
-                    <li class="leftaside_li"><a href="#button0"  class="active">button0</a></li>
-                    <li class="leftaside_li"><a href="#button1">botton1</a></li>
-                    <li class="leftaside_li"><a href="#button2">botton2</a></li>
-                    <li class="leftaside_li"><a href="#button3">botton3</a></li>
-                    <li class="leftaside_li"><a href="#button4">botton4</a></li>
-                    <li class="leftaside_li"><a href="#button5">botton5</a></li>
+                    <button class = "btn active">button1</button>
+                    <button class = "btn">button2</button>
+                    <button class = "btn">button3</button>
+                    <button class = "btn">button4</button>
+                    <button class = "btn">button5</button>
+                    <button class = "btn">button6</button>
                 </ul>               
-            </div>
-            <!-- 网页右侧栏 --> 
-            <div class="rightaside" >                    
-                <!-- 用户登录/注册 -->  
-                <div style="text-align: left;">
-                    <lable for="name"><h6>User name 
-                        <input type="text" id="name" placeholder="User name" class="inputframe" >
-                    </h6><lable>
-                    <lable for="name"><h6>Passwords 
-                        <input type="password" placeholder="password" class="inputframe">
-                    </h6><lable>
-                </div>
-                <input type="submit" value="Login" class="button"/>
-                <input type="button" value="Register" class="button"/>
-                <!-- 选择日历  
-                <input type="date" class="inputframe"/>
-                --> 
-
             </div>
             <!-- 内容主体 -->
             <div class="article">   
-                
-                <script>
-                    sayhi();
-                </script>
-
-                <div>   
-                    <div>
-                        <a href="file:///Users/jan/Documents/HtmlLearning/Jan/pag1.html">go to page1</a>
-                        <br>
-                        <img src="/Users/jan/Documents/HtmlLearning/picture/image1.jpg " width="80" height="80"/><img src="/Users/jan/Documents/HtmlLearning/picture/image1.jpg " width="80" height="80"/>
-                        <h1 background=“image1.jpg”>hello</h1>
-                    </div>
-                </div>  
-                <p>start text texttexttexttexttexttext
-                    texttexttexttexttexttexttexttextte
-                    CSS 组合器
-                    组合器是解释选择器之间关系的某种机制。
-
-                    CSS 选择器可以包含多个简单选择器。在简单选择器之间，我们可以包含一个组合器。
-
-                    CSS 中有四种不同的组合器：
-
-                    后代选择器 (空格)
-                    子选择器 (>)
-                    相邻兄弟选择器 (+)
-                    通用兄弟选择器 (~)
-                    texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext 
-                    texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext end
-                </p>  
-
+                <!--button1对应的内容-->
+                <div class="content show"> 
+                    <script>
+                        sayhi();
+                    </script>
+                </div>
+                <!--button2对应的内容-->
+                <div class="content">
+                    <img src="/Users/jan/Documents/HtmlLearning/picture/image1.jpg " width="300" height="200"/>
+                </div>
+                <!--button3对应的内容-->
+                <div class="content">
+                    <h1 background=“image1.jpg”>hello</h1>
+                </div>
+                <!--button4对应的内容-->
+                <div class="content">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/M_vEI64hbso" title="YouTube 					video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <!--button5对应的内容-->
+                <div class="content">
+                    <video src=" /Users/jan/Documents/DCIM/100GOPRO/GX010449.MP4" autoplay; loop controls width="500"></video>
+                </div>
+                <!--button6对应的内容-->
+                <div class="content">
+                    <p>conten6</p>
+                </div>
             </div>
+            <!--调用javascript函数，实现点击button更换对应的内容-->
+            <script>  
+                change_content();         
+            </script>
+
+             <!-- 网页右侧栏 --> 
+             <div class="rightaside" >                    
+                <!-- 用户登录/注册 -->
+                <div style="text-align: left;">
+                    <lable for="name"><h6>User name
+                        <input type="text" id="username" placeholder="User name" class="inputframe" >
+                    </h6><lable>
+                    <lable for="name"><h6>Passwords 
+                        <input type="password" id="password" placeholder="password" class="inputframe">
+                    </h6><lable>    
+                </div>
+                <button id="submit" class="login_button">Login</button>  
+                <a href="file:///Users/jan/Documents/HtmlLearning/Jan/register.html" target="_blank"><button id="regBtn" class="login_button">Register</button></a>
+                <script>
+
+                </script>
+                
+                <!--注册程序
+                <script src="md5.min.js"></script>
+                <script type="text/javascript">
+                        register()             
+                </script>
+                -->
+                <!-- 选择日历  
+                <input type="date" class="inputframe"/>
+                --> 
+            </div>
+
             <!-- 网页底部 -->
             <div class="footer">                    
                     <h4>addr:3760 pine road,oklahoma,73072</h4>

@@ -6,69 +6,69 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        .btn{
-            margin: 20px 120px;
-            width: 80px;        
+        /*---------网页布局--------------------------------------*/
+        .grid-container {
+            width:100%;
+            height:100%;
+            display: grid;                                  /*网格模式*/
+            grid-template-columns: 100px 500px 100px;  /*网格列宽设置*/
+            grid-template-rows: 100px 500px 100px;       /*网格行宽设置*/
+            grid-gap: 0;                                    /*网格间隙*/
+            grid-template-areas:                            /*网格各区域命名*/
+            "blank blank blank"
+            "blank1 register blank3"
+            "blank2 blank2 blank2";
+            background-color: rgb(111, 235, 235);                       /*网页背景颜色*/
+            padding:1px;
+     
         }
-        .content{
-            margin: 10px auto;
-            display: none;
+        .grid-container > div {    /* ">"为子选择器，定义grid-container下的所有第一代div属性*/                      
+            text-align:center;
+            font-size:30px;
         }
-        .btn.active{
-            background-color: pink;
+        .register{                                              /*logo区域属性*/
+            grid-area:register;                                 /*logo所在区域*/
+            background-color: rgb(240, 212, 30); 
+            text-align:right;
+            font-family:"Brush Script MT","Lucida Handwriting";/*字体*/  
+            border-style: none;                             /*边框样式：默认，无边框*/
         }
-        .content.show{
-            display:block;
-            
+        .blank{
+            grid-area:blank;
+            background-color:white;
+        }
+        .blank1{
+            grid-area:blank1;
+            background-color:rgb(217, 7, 28);
+        }
+        .blank2{
+            grid-area:blank2;
+            background-color:rgb(8, 219, 120);
+        }
+        .blank3{
+            grid-area:blank3;
+            background-color:rgb(32, 6, 183);
         }
     </style>
 </head>
 <body>
-    <p>
-        <button class="btn active">页面一</button>
-
-        <button class="btn">页面二</button>
-    
-        <button class="btn">页面三</button>
-    </p>
-
-    <div class="content show">
-         <p>页面一要显示的内容</p>
-         <input type="text" placeholder="页面一内容"/>
+    <div class="grid-container">
+        <div class = "blank">
+            blank
+        </div>
+        <div class = "blank1">
+            blank1
+        </div>       
+        <div class = "register">
+            register
+        </div>
+        <div class = "blank3">
+            blank3
+        </div>
+        <div class = "blank2">
+            blank2
+        </div>
+        
     </div>
-
-    <div class="content">
-          <p>页面二要显示的内容</p>
-          <input type="text" placeholder="页面二内容" />
-    </div>
-
-    <div class="content" >
-          <p>页面三要显示的内容</p>
-          <input type="text" placeholder="页面三内容"/>
-    </div>
-
-    <script>
-//获取页面的每个按钮
-        var btns = document.getElementsByClassName("btn")
-//获取内容盒子
-        var contents = document.getElementsByClassName("content")
-
-//遍历每个按钮为其添加点击事件
-        for(var i=0;i<btns.length;i++){
-            btns[i].index = i;
-            btns[i].onclick = function(){
-//对当前点击的按钮赋予active类名及显示当前按钮对应的内容
-                for(var j=0;j<btns.length;j++){
-                    btns[j].className = btns[j].className.replace(' active', '').trim();
-                    contents[j].className = contents[j].className.replace(' show', '').trim();
-                }
-                this.className = this.className + ' active';
-                contents[this.index].className = contents[this.index].className + ' show';
-            };
-
-        }
-
-
-    </script>
 </body>
 </html>
